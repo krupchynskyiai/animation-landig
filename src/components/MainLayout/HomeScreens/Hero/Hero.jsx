@@ -4,7 +4,7 @@ import { ProblemScreen } from "./ProblemScreen/ProblemScreen";
 
 const Hero = () => {
   return (
-    <SC.Hero>
+    <SC.Hero id="home">
       <HomeScreen />
       <ProblemScreen />
     </SC.Hero>

@@ -2,7 +2,7 @@ import * as SC from "./ProblemScreen.styled";
 
 export const ProblemScreen = () => {
   return (
-    <SC.ProblemScreenContainer>
+    <SC.ProblemScreenContainer id="problem">
       <SC.ProblemScreenTItleContainer>
         <SC.FirstRowBox>
           <SC.FirstRowText>Bridging </SC.FirstRowText>

@@ -4,7 +4,7 @@ import { Title } from "./Title/Title";
 
 const Cases = () => {
   return (
-    <SC.CasesSection>
+    <SC.CasesSection id="cases">
       <SC.CasesContainer>
         <Title />
         <CardsList />
