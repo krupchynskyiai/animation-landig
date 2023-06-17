@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/animation-landing/static/css/main.fd866e70.css",
+    "main.js": "/animation-landing/static/js/main.1d5a6cf5.js",
+    "static/media/sunGrad.svg": "/animation-landing/static/media/sunGrad.655b187ba14e5a1a459705a21b1504c8.svg",
+    "static/media/logoHeader.svg": "/animation-landing/static/media/logoHeader.ed6bcd5813f5353207978e9ed955b728.svg",
+    "static/media/sun.svg": "/animation-landing/static/media/sun.eb446ce5f350afda1fd9bb2c3116f0e3.svg",
+    "index.html": "/animation-landing/index.html",
+    "static/media/requestBetaArrow.svg": "/animation-landing/static/media/requestBetaArrow.a10c43d38355a7b8b87d784acf65da9b.svg",
+    "static/media/starGrad.svg": "/animation-landing/static/media/starGrad.ac25f0a3601f227ccad17dfe6078c7c5.svg",
+    "static/media/diamondGrad.svg": "/animation-landing/static/media/diamondGrad.332c76ca6bd9d412757e2bb7c860be75.svg",
+    "static/media/sharpPolygon.svg": "/animation-landing/static/media/sharpPolygon.9df6d1f55b2359f6de5af800dc5d71e3.svg",
+    "static/media/diamond.svg": "/animation-landing/static/media/diamond.8a9440f163fa49f9f18ca4920c2a6b6f.svg",
+    "main.fd866e70.css.map": "/animation-landing/static/css/main.fd866e70.css.map",
+    "main.1d5a6cf5.js.map": "/animation-landing/static/js/main.1d5a6cf5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd866e70.css",
+    "static/js/main.1d5a6cf5.js"
+  ]
+}
