@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <Box p={3}>
+    <Box>
       {isLoading ? (
         <Loader />
       ) : (

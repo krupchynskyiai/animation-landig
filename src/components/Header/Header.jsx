@@ -4,11 +4,9 @@ import { Logo } from "./Logo/Logo";
 import { NavList } from "./NavList/NavList";
 import { SubNavListWithLogin } from "./SubNavListWithLogin/SubNavListWithLogin";
 
-import { CircleText } from "../CircleText/CircleText";
-
 export const Header = () => {
   return (
-    <Box>
+    <Box position={"fixed"} width={"100%"} p={"24px"} zIndex={"100"}>
       <SC.HeaderContainer>
         <Logo />
         <NavList />

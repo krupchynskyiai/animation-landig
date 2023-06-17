@@ -6,6 +6,7 @@ const text = "Request Beta Request Beta Request Beta ";
 const CircleTextContainer = styled.p``;
 
 const CircleTextLetter = styled.span`
+  cursor: default;
   font-family: Inter;
   font-size: ${(p) => p.size / 12}px;
   height: 50%;
@@ -35,6 +36,7 @@ export const CircleText = ({ size }) => {
         <CircleTextContainer>
           {text.split("").map((letter, index) => (
             <CircleTextLetter
+              key={index}
               size={size}
               style={{
                 transform: `rotate(${(index + 1) * 9.2}deg)`,

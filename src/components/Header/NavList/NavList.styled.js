@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeaderBtn, HeaderNavList } from "components/ComponentsTamplate";
+import { HeaderBtn, HeaderNavList } from "components/ComponentsTemplate.styled";
 
 export const NavListContainer = styled.div`
   height: 100%;

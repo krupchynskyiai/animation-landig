@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HeaderBtn } from "components/ComponentsTamplate";
+import { HeaderBtn } from "components/ComponentsTemplate.styled";
 
 export const LogoContainer = styled(HeaderBtn)`
   background-color: #c1f4f8;
