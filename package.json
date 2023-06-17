@@ -2,7 +2,7 @@
   "name": "animation-landing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://krupchynskyiai.github.io/animation-landing/",
+  "homepage": "https://krupchynskyiai.github.io/animation-landig/",
   "dependencies": {
     "@handy-ones/handy-svg": "^1.0.2",
     "@testing-library/jest-dom": "^5.16.5",
