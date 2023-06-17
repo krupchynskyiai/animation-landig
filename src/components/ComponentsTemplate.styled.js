@@ -7,6 +7,7 @@ export const HeaderBtn = styled.li`
   justify-content: center;
   height: 100%;
 
+  border: 1px solid #101010;
   border-radius: 50px;
   padding: 0 16px;
 `;
@@ -51,6 +52,6 @@ export const LearnMoreBtnText = styled.span`
 export const LearnMoreBtnArrow = styled(ArowSvg)`
   width: 24px;
   height: 24px;
-  transform: rotate(180deg);
+  transform: rotate(-90deg);
   color: #101010;
 `;
