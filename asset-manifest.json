@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/animation-landig/static/css/main.fd866e70.css",
-    "main.js": "/animation-landig/static/js/main.d87807f9.js",
+    "main.js": "/animation-landig/static/js/main.57e87481.js",
     "static/media/sunGrad.svg": "/animation-landig/static/media/sunGrad.655b187ba14e5a1a459705a21b1504c8.svg",
     "static/media/logoHeader.svg": "/animation-landig/static/media/logoHeader.ed6bcd5813f5353207978e9ed955b728.svg",
     "static/media/sun.svg": "/animation-landig/static/media/sun.eb446ce5f350afda1fd9bb2c3116f0e3.svg",
@@ -12,10 +12,10 @@
     "static/media/sharpPolygon.svg": "/animation-landig/static/media/sharpPolygon.9df6d1f55b2359f6de5af800dc5d71e3.svg",
     "static/media/diamond.svg": "/animation-landig/static/media/diamond.8a9440f163fa49f9f18ca4920c2a6b6f.svg",
     "main.fd866e70.css.map": "/animation-landig/static/css/main.fd866e70.css.map",
-    "main.d87807f9.js.map": "/animation-landig/static/js/main.d87807f9.js.map"
+    "main.57e87481.js.map": "/animation-landig/static/js/main.57e87481.js.map"
   },
   "entrypoints": [
     "static/css/main.fd866e70.css",
-    "static/js/main.d87807f9.js"
+    "static/js/main.57e87481.js"
   ]
 }
