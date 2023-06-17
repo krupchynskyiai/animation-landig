@@ -45,6 +45,7 @@ export const CardsList = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
+                marginBottom: "32px",
               }}
             >
               {card.title}
