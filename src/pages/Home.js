@@ -31,7 +31,7 @@ const Home = () => {
         <Box
           position={"relative"}
           style={{
-            maxWidth: "1440px",
+            width: "1440px",
             transformOrigin: "top left",
             transform: `scale(${scale})`,
           }}
