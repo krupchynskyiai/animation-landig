@@ -5,9 +5,11 @@ import { ReactComponent as Sharp } from "assets/svg/sharpPolygon.svg";
 
 export const ProblemScreenContainer = styled.div`
   min-height: 100vh;
+  padding-top: 93px;
 `;
 
 export const ProblemScreenTItleContainer = styled.div`
+  height: calc(100% - 93px);
   display: flex;
   flex-direction: column;
   align-items: start;

@@ -7,6 +7,9 @@ import Hero from "components/MainLayout/HomeScreens/Hero/Hero";
 import Cases from "components/MainLayout/HomeScreens/Cases/Cases";
 
 import { Loader } from "components/Loader/Loader";
+import HowItWorks from "components/MainLayout/HomeScreens/HowItWorks/HowItWorks";
+import Faqs from "components/MainLayout/HomeScreens/Faqs/Faqs";
+import Footer from "components/MainLayout/Footer/Footer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,6 +30,9 @@ const Home = () => {
           <Header />
           <Hero />
           <Cases />
+          <HowItWorks />
+          <Faqs />
+          <Footer />
           <Box position={"fixed"} top={"calc(100vh - 260px)"} right={28}>
             <RequestBetaBtn size={228} />
           </Box>

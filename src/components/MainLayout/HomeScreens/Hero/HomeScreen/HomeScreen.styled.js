@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactComponent as Diamond } from "assets/svg/diamond.svg";
 
 export const HomeScreenContainer = styled.div`
+  padding-top: 93px;
   min-height: 100vh;
   position: relative;
 `;

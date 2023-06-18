@@ -1,5 +1,5 @@
 import * as SC from "./Cases.styled";
-import { CardsList } from "./Title/CardsList/CardsList";
+import { CardsList } from "./CardsList/CardsList";
 import { Title } from "./Title/Title";
 
 const Cases = () => {
