@@ -12,7 +12,7 @@ export const GetStartedBtn = () => {
           "linear-gradient( transparent 0%, transparent 50%, #101010 50%, #101010 100%)",
       }}
     >
-      <a>
+      <a href="/">
         <SC.GetStartedBtn>
           <SC.GetStartedBtnText>Get Started with Givell</SC.GetStartedBtnText>
           <ArrowSvg
