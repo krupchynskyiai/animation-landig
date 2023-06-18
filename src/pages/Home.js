@@ -13,6 +13,8 @@ import Footer from "components/MainLayout/Footer/Footer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const scale = window.innerWidth / 1440;
+  console.log(scale);
 
   useEffect(() => {
     // Симулюємо завантаження даних або інших асинхронних операцій
@@ -28,9 +30,11 @@ const Home = () => {
       ) : (
         <Box
           position={"relative"}
-          mr="auto"
-          ml="auto"
-          style={{ width: "1440px" }}
+          style={{
+            maxWidth: "1440px",
+            transformOrigin: "top left",
+            transform: `scale(${scale})`,
+          }}
         >
           <Header />
           <Hero />
