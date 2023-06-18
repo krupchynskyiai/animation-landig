@@ -1,4 +1,3 @@
-import * as SC from "./FooterNav.styled";
 import { Box } from "components/Box";
 import { Logo } from "./Logo/Logo";
 import { NavList } from "./NavList/NavList";
