@@ -26,7 +26,12 @@ const Home = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Box position={"relative"}>
+        <Box
+          position={"relative"}
+          mr="auto"
+          ml="auto"
+          style={{ width: "1440px" }}
+        >
           <Header />
           <Hero />
           <Cases />

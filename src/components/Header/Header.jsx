@@ -6,7 +6,7 @@ import { SubNavListWithLogin } from "./SubNavListWithLogin/SubNavListWithLogin";
 
 export const Header = () => {
   return (
-    <Box position={"fixed"} width={"100%"} p={"24px"} zIndex={"100"}>
+    <Box position="fixed" width="1440px" p="24px" zIndex="100">
       <SC.HeaderContainer>
         <Logo />
         <NavList />
