@@ -13,8 +13,19 @@ import Footer from "components/MainLayout/Footer/Footer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const scale = window.innerWidth / 1440;
-  console.log(scale);
+  const [scale, setScale] = useState(window.innerWidth / 1440);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setScale(window.innerWidth / 1440);
+
+      return () => {
+        window.removeEventListener("resize", () => {
+          setScale(window.innerWidth / 1440);
+        });
+      };
+    });
+  }, []);
 
   useEffect(() => {
     // Симулюємо завантаження даних або інших асинхронних операцій
@@ -28,20 +39,23 @@ const Home = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Box
-          position={"relative"}
-          style={{
-            width: "1440px",
-            transformOrigin: "top left",
-            transform: `scale(${scale})`,
-          }}
-        >
-          <Header />
-          <Hero />
-          <Cases />
-          <HowItWorks />
-          <Faqs />
-          <Footer />
+        <Box position={"relative"}>
+          <Header scale={scale} />
+
+          <Box
+            position={"relative"}
+            style={{
+              width: "1440px",
+              transformOrigin: "top left",
+              transform: `scale(${scale})`,
+            }}
+          >
+            <Hero />
+            <Cases />
+            <HowItWorks />
+            <Faqs />
+            <Footer />
+          </Box>
           <Box position={"fixed"} top={"calc(100vh - 260px)"} right={28}>
             <RequestBetaBtn size={228} />
           </Box>
