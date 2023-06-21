@@ -9,6 +9,7 @@ const CircleTextLetter = styled.span`
   cursor: default;
   font-family: Inter;
   font-size: ${(p) => p.size / 12}px;
+  font-weight: 600;
   height: 50%;
   position: absolute;
   width: 0;
