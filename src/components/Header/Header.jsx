@@ -11,8 +11,10 @@ export const Header = ({ scale }) => {
       p="24px"
       zIndex="100"
       style={{
-        width: `${window.innerWidth / (0.5 + scale * 0.5)}px`,
-        transform: `scale(${0.5 + scale * 0.5})`,
+        transform: `scale(${0.57 + scale * 0.43})`,
+        width: `${
+          document.documentElement.clientWidth / (0.57 + scale * 0.43)
+        }px`,
         transformOrigin: "left top",
       }}
     >

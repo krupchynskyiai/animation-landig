@@ -13,19 +13,23 @@ import Footer from "components/MainLayout/Footer/Footer";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [scale, setScale] = useState(window.innerWidth / 1440);
+  const [scale, setScale] = useState(
+    document.documentElement.clientWidth / 1440
+  );
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setScale(window.innerWidth / 1440);
+      setScale(document.documentElement.clientWidth / 1440);
 
       return () => {
         window.removeEventListener("resize", () => {
-          setScale(window.innerWidth / 1440);
+          setScale(document.documentElement.clientWidth / 1440);
         });
       };
     });
   }, []);
+  console.log("w", document.documentElement.clientWidth);
+  console.log("d", window.innerWidth);
 
   useEffect(() => {
     // Симулюємо завантаження даних або інших асинхронних операцій
@@ -45,18 +49,26 @@ const Home = () => {
           <Box
             position={"relative"}
             style={{
-              width: "1440px",
-              transformOrigin: "top left",
               transform: `scale(${scale})`,
+              width: `${1440}px`,
+              transformOrigin: "top left",
             }}
           >
             <Hero />
             <Cases />
             <HowItWorks />
             <Faqs />
-            <Footer />
+            <Footer scale={scale} />
           </Box>
-          <Box position={"fixed"} top={"calc(100vh - 260px)"} right={28}>
+          <Box
+            position={"fixed"}
+            bottom={28}
+            right={28}
+            style={{
+              transform: `scale(${scale})`,
+              transformOrigin: "bottom right",
+            }}
+          >
             <RequestBetaBtn size={228} />
           </Box>
         </Box>
