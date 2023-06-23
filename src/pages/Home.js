@@ -11,25 +11,32 @@ import HowItWorks from "components/MainLayout/HomeScreens/HowItWorks/HowItWorks"
 import Faqs from "components/MainLayout/HomeScreens/Faqs/Faqs";
 import Footer from "components/MainLayout/Footer/Footer";
 
+import { getScrollBarWidth } from "helpers";
+
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [scale, setScale] = useState(
-    document.documentElement.clientWidth / 1440
-  );
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const [scale, setScale] = useState(0);
+
+  useEffect(() => {
+    setScale(window.innerWidth / (1440 - scrollWidth));
+  }, [scrollWidth]);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      setScale(document.documentElement.clientWidth / 1440);
+      setScale(window.innerWidth / (1440 - scrollWidth));
 
       return () => {
         window.removeEventListener("resize", () => {
-          setScale(document.documentElement.clientWidth / 1440);
+          setScale(window.innerWidth / (1440 - scrollWidth));
         });
       };
     });
+  }, [scrollWidth]);
+
+  useEffect(() => {
+    setScrollWidth(getScrollBarWidth());
   }, []);
-  console.log("w", document.documentElement.clientWidth);
-  console.log("d", window.innerWidth);
 
   useEffect(() => {
     // Симулюємо завантаження даних або інших асинхронних операцій
@@ -40,39 +47,39 @@ const Home = () => {
 
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <Box position={"relative"}>
-          <Header scale={scale} />
+      {/* {isLoading ? (
+      //   <Loader />
+      // ) : ( */}
+      <Box position={"relative"} height="auto">
+        <Header scale={scale} />
 
-          <Box
-            position={"relative"}
-            style={{
-              transform: `scale(${scale})`,
-              width: `${1440}px`,
-              transformOrigin: "top left",
-            }}
-          >
-            <Hero />
-            <Cases />
-            <HowItWorks />
-            <Faqs />
-            <Footer scale={scale} />
-          </Box>
-          <Box
-            position={"fixed"}
-            bottom={28}
-            right={28}
-            style={{
-              transform: `scale(${scale})`,
-              transformOrigin: "bottom right",
-            }}
-          >
-            <RequestBetaBtn size={228} />
-          </Box>
+        <Box
+          position={"relative"}
+          style={{
+            transform: `scale(${scale})`,
+            width: `${window.innerWidth / scale}px`,
+            transformOrigin: "top left",
+          }}
+        >
+          <Hero />
+          <Cases />
+          <HowItWorks />
+          <Faqs />
+          <Footer scale={scale} scrollWidth={scrollWidth} />
         </Box>
-      )}
+        <Box
+          position={"fixed"}
+          bottom={28}
+          right={28}
+          style={{
+            transform: `scale(${scale})`,
+            transformOrigin: "bottom right",
+          }}
+        >
+          <RequestBetaBtn size={228} />
+        </Box>
+      </Box>
+      {/* // )} */}
     </>
   );
 };

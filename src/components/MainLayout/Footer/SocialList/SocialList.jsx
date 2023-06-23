@@ -10,7 +10,7 @@ export const SocialList = () => {
   return (
     <SC.SocialList>
       {socialIcons.map((Icon, index) => (
-        <SC.SocialItem>
+        <SC.SocialItem key={index}>
           <SC.SocialLink href="/">
             <Icon height="24px" width="24px" />
           </SC.SocialLink>

@@ -3,11 +3,9 @@ import * as SC from "./Footer.styled";
 import { FooterNav } from "./FooterNav/FooterNav";
 import { SocialList } from "./SocialList/SocialList";
 
-const Footer = ({ scale }) => {
-  const footerScale =
-    0.43 + (1440 / document.documentElement.clientWidth) * 0.57;
-  console.log(0.57 + scale * 0.43);
-  const width = document.documentElement.clientWidth / (0.57 + scale * 0.43);
+const Footer = ({ scale, scrollWidth }) => {
+  const footerScale = 0.43 + ((1440 - scrollWidth) / window.innerWidth) * 0.57;
+  const width = window.innerWidth / (0.57 + scale * 0.43);
   return (
     <SC.Footer
       style={{

@@ -4,9 +4,15 @@ export const Footer = styled.footer`
   padding: 100px 0 24px 0;
   background-color: #101010;
   margin-top: -1px;
+  position: absolute;
 `;
 
 export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+
   width: 100%;
   padding: 0 24px;
 `;
