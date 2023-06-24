@@ -6,7 +6,7 @@ import { RequestBetaBtn } from "components/RequestBetaBtn";
 import Hero from "components/MainLayout/HomeScreens/Hero/Hero";
 import Cases from "components/MainLayout/HomeScreens/Cases/Cases";
 
-import { Loader } from "components/Loader/Loader";
+// import { Loader } from "components/Loader/Loader";
 import HowItWorks from "components/MainLayout/HomeScreens/HowItWorks/HowItWorks";
 import Faqs from "components/MainLayout/HomeScreens/Faqs/Faqs";
 import Footer from "components/MainLayout/Footer/Footer";
@@ -14,7 +14,7 @@ import Footer from "components/MainLayout/Footer/Footer";
 import { getScrollBarWidth } from "helpers";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [scrollWidth, setScrollWidth] = useState(0);
   const [scale, setScale] = useState(0);
 
@@ -38,12 +38,12 @@ const Home = () => {
     setScrollWidth(getScrollBarWidth());
   }, []);
 
-  useEffect(() => {
-    // Симулюємо завантаження даних або інших асинхронних операцій
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   // Симулюємо завантаження даних або інших асинхронних операцій
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  // }, []);
 
   return (
     <>
