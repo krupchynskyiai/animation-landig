@@ -1,10 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as SC from "./Loader.styled";
 import { Progress } from "./Progress/Progress";
 import { Title } from "./Title/Title";
 
-const Loader = ({ setIsLoading, scale }) => {
+const Loader = ({ isLoading, setIsLoading, scale }) => {
   const [progress, setProgress] = useState(0);
+  const loader = useRef(null);
+
+  useEffect(() => {
+    if (isLoading) {
+      loader.current.style.display = "flex";
+    } else {
+      loader.current.style.display = "none";
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     const progressCounter = async () => {
@@ -33,13 +42,13 @@ const Loader = ({ setIsLoading, scale }) => {
               setTimeout(() => {
                 setProgress(100);
                 setTimeout(() => {
-                  setProgress(101);
+                  setIsLoading(false);
                 }, 2000);
               }, minTime - new Date().getTime());
             } else {
               setProgress(100);
               setTimeout(() => {
-                setProgress(101);
+                setIsLoading(false);
               }, 2000);
             }
           }
@@ -51,6 +60,7 @@ const Loader = ({ setIsLoading, scale }) => {
 
   return (
     <SC.LoaderContainer
+      ref={loader}
       style={{
         display: progress === 101 ? "none" : "flex",
         height: `${document.documentElement.clientHeight / scale}px`,
