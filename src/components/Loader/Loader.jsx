@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import * as SC from "./Loader.styled";
 import { Progress } from "./Progress/Progress";
 import { Title } from "./Title/Title";
