@@ -5,7 +5,7 @@ export const TitleContainer = styled.div``;
 export const Title = styled.p`
   &::after {
     content: "Monetise";
-    animation: spin 18s linear infinite;
+    animation: spin 9s linear infinite;
     display: block;
     font-size: 130px;
     font-family: "Inter";
