@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <>
-      <Loader />
+      <Loader scale={scale} />
 
       <Box position={"relative"} height="auto">
         <Header scale={scale} />

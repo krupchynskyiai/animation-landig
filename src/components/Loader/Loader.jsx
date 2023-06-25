@@ -3,7 +3,7 @@ import * as SC from "./Loader.styled";
 import { Progress } from "./Progress/Progress";
 import { Title } from "./Title/Title";
 
-const Loader = ({ setIsLoading }) => {
+const Loader = ({ setIsLoading, scale }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -50,7 +50,15 @@ const Loader = ({ setIsLoading }) => {
   }, [setIsLoading]);
 
   return (
-    <SC.LoaderContainer>
+    <SC.LoaderContainer
+      style={{
+        // display: progress === 101 ? "none" : "flex",
+        height: `${document.documentElement.clientHeight / scale}px`,
+        width: `${document.documentElement.clientWidth / scale}px`,
+        transform: `scale(${scale})`,
+        transformOrigin: "left top",
+      }}
+    >
       <Title />
       <Progress progress={progress} />
     </SC.LoaderContainer>

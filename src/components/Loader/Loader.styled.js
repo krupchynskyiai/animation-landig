@@ -9,7 +9,7 @@ export const LoaderContainer = styled.div`
   left: 0;
   z-index: 1000;
 
-  width: 100vw;
+  width: 1440px;
   height: 100vh;
 
   background-color: #101010;
