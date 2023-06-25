@@ -4,10 +4,10 @@ export const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1;
 
   width: 1440px;
   height: 100vh;

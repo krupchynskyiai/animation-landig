@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { CSSTransition } from "react-transition-group";
 
 import { Box } from "components/Box";
 import { Header } from "components/Header/Header";
@@ -50,36 +51,54 @@ const Home = () => {
   return (
     <>
       <Loader isLoading={isLoading} scale={scale} setIsLoading={setIsLoading} />
-
-      <Box position={"relative"} height="auto" bg={"#c1f4f8"} ref={mainLayout}>
-        <Header scale={scale} />
-
+      <CSSTransition
+        in={!isLoading}
+        timeout={0}
+        nodeRef={mainLayout}
+        classNames={{
+          enter: "mainLayout-enter",
+          enterActive: "mainLayout-active-enter",
+          enterDone: "mainLayout-done-enter",
+        }}
+      >
         <Box
           position={"relative"}
+          height="auto"
+          bg={"#c1f4f8"}
+          ref={mainLayout}
           style={{
-            transform: `scale(${scale})`,
-            width: `${window.innerWidth / scale}px`,
-            transformOrigin: "top left",
+            zIndex: 2,
           }}
         >
-          <Hero />
-          <Cases />
-          <HowItWorks />
-          <Faqs />
-          <Footer scale={scale} scrollWidth={scrollWidth} />
+          <Header scale={scale} />
+
+          <Box
+            position={"relative"}
+            style={{
+              transform: `scale(${scale})`,
+              width: `${window.innerWidth / scale}px`,
+              transformOrigin: "top left",
+            }}
+          >
+            <Hero />
+            <Cases />
+            <HowItWorks />
+            <Faqs />
+            <Footer scale={scale} scrollWidth={scrollWidth} />
+          </Box>
+          <Box
+            position={"fixed"}
+            bottom={28}
+            right={28}
+            style={{
+              transform: `scale(${scale})`,
+              transformOrigin: "bottom right",
+            }}
+          >
+            <RequestBetaBtn size={228} />
+          </Box>
         </Box>
-        <Box
-          position={"fixed"}
-          bottom={28}
-          right={28}
-          style={{
-            transform: `scale(${scale})`,
-            transformOrigin: "bottom right",
-          }}
-        >
-          <RequestBetaBtn size={228} />
-        </Box>
-      </Box>
+      </CSSTransition>
     </>
   );
 };

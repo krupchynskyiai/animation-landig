@@ -59,3 +59,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.mainLayout-enter {
+  transform: translateY(100vh);
+}
+.mainLayout-done-enter {
+  transform: translateY(0);
+  transition: transform 2s cubic-bezier(0.37, 1.49, 0.83, 0.67);
+}

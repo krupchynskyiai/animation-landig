@@ -10,7 +10,9 @@ const Loader = ({ isLoading, setIsLoading, scale }) => {
     if (isLoading) {
       loader.current.style.display = "flex";
     } else {
-      loader.current.style.display = "none";
+      setTimeout(() => {
+        loader.current.style.display = "none";
+      }, 2000);
     }
   }, [isLoading]);
 
@@ -24,7 +26,7 @@ const Loader = ({ isLoading, setIsLoading, scale }) => {
         transformOrigin: "left top",
       }}
     >
-      <Title />
+      <Title isLoading={isLoading} />
       <Progress setIsLoading={setIsLoading} />
     </SC.LoaderContainer>
   );

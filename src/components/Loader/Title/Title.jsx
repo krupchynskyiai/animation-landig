@@ -10,20 +10,23 @@ const loaderText = [
   <SC.Title className="text-animation">Monitise</SC.Title>,
 ];
 
-export const Title = () => {
+export const Title = ({ isLoading }) => {
   const [text, setText] = React.useState(loaderText[3]);
 
   useEffect(() => {
+    let interval = null;
     let i = 0;
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
       setText(loaderText[i]);
       i++;
       if (i === loaderText.length) {
         i = 0;
       }
     }, 1500);
+    console.log(isLoading, interval);
+    if (!isLoading) clearInterval(interval);
     return () => clearInterval(interval);
-  }, []);
+  }, [isLoading]);
 
   useEffect(() => {
     var wrapper = document.getElementsByClassName("text-animation")[0];
