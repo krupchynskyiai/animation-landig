@@ -33,7 +33,7 @@ export const Title = () => {
     var spans = wrapper.getElementsByTagName("span");
 
     for (var i = 0; i < spans.length; i++) {
-      spans[i].style.animationDelay = i * 80 + "ms";
+      spans[i].style.animationDelay = i * 20 + "ms";
     }
   }, [text]);
 
