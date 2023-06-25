@@ -1,47 +1,60 @@
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
+import * as SC from "./Loader.styled";
+import { Progress } from "./Progress/Progress";
+import { Title } from "./Title/Title";
 
-const LoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
+const Loader = ({ setIsLoading }) => {
+  const [progress, setProgress] = useState(0);
 
-const LoaderSlowCircleText = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
+  useEffect(() => {
+    const progressCounter = async () => {
+      const minTime = new Date().getTime() + 5000;
+      const mediaFiles = document.querySelectorAll("img, video");
 
-  border-radius: 50%;
-  border: 5px solid #3498db;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  animation: spin 3s linear infinite;
+      mediaFiles.forEach((file, index) => {
+        let percent = 0;
 
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-`;
+        file.addEventListener("load", async () => {
+          const isDublicate = Array.from(mediaFiles).filter(
+            (item) => item.src === file.src
+          );
 
-const CircleText = styled.p`
-  font-size: 12px;
-  color: #3498db;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: bold;
-`;
+          if (isDublicate.length > 1) {
+            percent += isDublicate.length;
+          } else {
+            percent += 1;
+          }
+          const currentPercent = (percent * 100) / (mediaFiles.length + 1);
 
-export const Loader = () => {
+          setProgress(currentPercent.toFixed(0));
+
+          if (percent === mediaFiles.length) {
+            if (minTime > new Date().getTime()) {
+              setTimeout(() => {
+                setProgress(100);
+                setTimeout(() => {
+                  setProgress(101);
+                }, 2000);
+              }, minTime - new Date().getTime());
+            } else {
+              setProgress(100);
+              setTimeout(() => {
+                setProgress(101);
+              }, 2000);
+            }
+          }
+        });
+      });
+    };
+    progressCounter();
+  }, [setIsLoading]);
+
   return (
-    <LoaderContainer>
-      <LoaderSlowCircleText>
-        <CircleText>Тут буде ваш лоадер</CircleText>
-      </LoaderSlowCircleText>
-    </LoaderContainer>
+    <SC.LoaderContainer>
+      <Title />
+      <Progress progress={progress} />
+    </SC.LoaderContainer>
   );
 };
+
+export default Loader;

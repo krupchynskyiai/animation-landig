@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+// import Loader from "components/Loader/Loader";
 
 import { Box } from "components/Box";
+
+// const Loader = lazy(() => import("components/Loader/Loader"));
+const Home = lazy(() => import("./pages/Home"));
 
 function App() {
   return (
     <Box>
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Suspense>
     </Box>
   );
 }
