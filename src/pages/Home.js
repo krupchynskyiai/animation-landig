@@ -51,7 +51,7 @@ const Home = () => {
     <>
       <Loader isLoading={isLoading} scale={scale} setIsLoading={setIsLoading} />
 
-      <Box position={"relative"} height="auto" ref={mainLayout}>
+      <Box position={"relative"} height="auto" bg={"#c1f4f8"} ref={mainLayout}>
         <Header scale={scale} />
 
         <Box
