@@ -6,7 +6,7 @@ const LoaderText = [
   <SC.Title className="text-animation">Engage</SC.Title>,
   <SC.Title className="text-animation">Trhive</SC.Title>,
   <SC.Title style={{ color: "#4DFFDF" }} className="text-animation">
-    GIVEL.
+    GIVELL.
   </SC.Title>,
 ];
 
@@ -21,7 +21,7 @@ export const Title = () => {
       if (i === LoaderText.length) {
         i = 0;
       }
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -33,7 +33,7 @@ export const Title = () => {
     var spans = wrapper.getElementsByTagName("span");
 
     for (var i = 0; i < spans.length; i++) {
-      spans[i].style.animationDelay = i * 20 + "ms";
+      spans[i].style.animationDelay = i * 40 + "ms";
     }
   }, [text]);
 
