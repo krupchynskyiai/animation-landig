@@ -1,26 +1,24 @@
 import React, { useEffect } from "react";
 import * as SC from "./Title.styled";
 
-const LoaderText = [
-  <SC.Title className="text-animation">Monitise</SC.Title>,
+const loaderText = [
   <SC.Title className="text-animation">Engage</SC.Title>,
   <SC.Title className="text-animation">Trhive</SC.Title>,
   <SC.Title style={{ color: "#4DFFDF" }} className="text-animation">
     GIVELL.
   </SC.Title>,
+  <SC.Title className="text-animation">Monitise</SC.Title>,
 ];
 
 export const Title = () => {
-  const [text, setText] = React.useState(
-    <SC.Title className="text-animation"></SC.Title>
-  );
+  const [text, setText] = React.useState(loaderText[3]);
 
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      setText(LoaderText[i]);
+      setText(loaderText[i]);
       i++;
-      if (i === LoaderText.length) {
+      if (i === loaderText.length) {
         i = 0;
       }
     }, 1500);
