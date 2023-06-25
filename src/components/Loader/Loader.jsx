@@ -52,7 +52,7 @@ const Loader = ({ setIsLoading, scale }) => {
   return (
     <SC.LoaderContainer
       style={{
-        // display: progress === 101 ? "none" : "flex",
+        display: progress === 101 ? "none" : "flex",
         height: `${document.documentElement.clientHeight / scale}px`,
         width: `${document.documentElement.clientWidth / scale}px`,
         transform: `scale(${scale})`,
