@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/animation-landing/static/css/main.b85a404e.css",
-    "main.js": "/animation-landing/static/js/main.03e989c7.js",
-    "static/js/211.f050bb04.chunk.js": "/animation-landing/static/js/211.f050bb04.chunk.js",
+    "main.js": "/animation-landing/static/js/main.fcc3a58e.js",
+    "static/js/211.f9750935.chunk.js": "/animation-landing/static/js/211.f9750935.chunk.js",
     "static/media/discord.svg": "/animation-landing/static/media/discord.2fdf6c39ede358995db03f185d2d0b9c.svg",
     "static/media/twitter.svg": "/animation-landing/static/media/twitter.3cbff1aab7919ee036ce8daa46fb94a7.svg",
     "static/media/sunGrad.svg": "/animation-landing/static/media/sunGrad.655b187ba14e5a1a459705a21b1504c8.svg",
@@ -22,11 +22,11 @@
     "static/media/diamond.svg": "/animation-landing/static/media/diamond.8a9440f163fa49f9f18ca4920c2a6b6f.svg",
     "static/media/syricen.svg": "/animation-landing/static/media/syricen.68a323bcae0d791578d236b841ba4df9.svg",
     "main.b85a404e.css.map": "/animation-landing/static/css/main.b85a404e.css.map",
-    "main.03e989c7.js.map": "/animation-landing/static/js/main.03e989c7.js.map",
-    "211.f050bb04.chunk.js.map": "/animation-landing/static/js/211.f050bb04.chunk.js.map"
+    "main.fcc3a58e.js.map": "/animation-landing/static/js/main.fcc3a58e.js.map",
+    "211.f9750935.chunk.js.map": "/animation-landing/static/js/211.f9750935.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b85a404e.css",
-    "static/js/main.03e989c7.js"
+    "static/js/main.fcc3a58e.js"
   ]
 }
