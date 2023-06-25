@@ -21,7 +21,7 @@ export const Title = () => {
       if (i === LoaderText.length) {
         i = 0;
       }
-    }, 1000);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
