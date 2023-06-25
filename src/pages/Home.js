@@ -16,7 +16,7 @@ import { getScrollBarWidth } from "helpers";
 const Home = () => {
   const [scrollWidth, setScrollWidth] = useState(0);
   const [scale, setScale] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setScale(window.innerWidth / (1440 - scrollWidth));
