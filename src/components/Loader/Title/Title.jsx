@@ -11,7 +11,9 @@ const LoaderText = [
 ];
 
 export const Title = () => {
-  const [text, setText] = React.useState(LoaderText[0]);
+  const [text, setText] = React.useState(
+    <SC.Title className="text-animation"></SC.Title>
+  );
 
   useEffect(() => {
     let i = 0;
