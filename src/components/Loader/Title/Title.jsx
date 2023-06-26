@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as SC from "./Title.styled";
+import { Box } from "components/Box";
+import { CSSTransition } from "react-transition-group";
 
 const loaderText = [
   <SC.Title className="text-animation">Engage</SC.Title>,
@@ -11,11 +13,18 @@ const loaderText = [
 ];
 
 export const Title = ({ isLoading }) => {
-  const [text, setText] = React.useState(loaderText[3]);
+  const [text, setText] = useState(loaderText[3]);
+  const [startAnimate, setStartAnimate] = useState(false);
+  const textBox = useRef(null);
 
   useEffect(() => {
     let interval = null;
     let i = 0;
+    if (!isLoading) {
+      console.log(isLoading);
+      clearInterval(interval);
+      return;
+    }
     interval = setInterval(() => {
       setText(loaderText[i]);
       i++;
@@ -23,8 +32,7 @@ export const Title = ({ isLoading }) => {
         i = 0;
       }
     }, 1500);
-    console.log(isLoading, interval);
-    if (!isLoading) clearInterval(interval);
+
     return () => clearInterval(interval);
   }, [isLoading]);
 
@@ -40,5 +48,20 @@ export const Title = ({ isLoading }) => {
     }
   }, [text]);
 
-  return <SC.TitleContainer>{text}</SC.TitleContainer>;
+  return (
+    <SC.TitleContainer>
+      <CSSTransition
+        in={isLoading}
+        nodeRef={textBox}
+        timeout={1000}
+        classNames={{
+          exit: "textBox-exit",
+          exitActive: "textBox-active-exit",
+          exitDone: "textBox-done-exit",
+        }}
+      >
+        <SC.TextWrapper ref={textBox}>{text}</SC.TextWrapper>
+      </CSSTransition>
+    </SC.TitleContainer>
+  );
 };

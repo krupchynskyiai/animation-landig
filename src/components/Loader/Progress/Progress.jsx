@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { CSSTransition } from "react-transition-group";
 import * as SC from "./Progress.styled";
 
 function is_cached(src) {
@@ -8,8 +9,9 @@ function is_cached(src) {
   return image.complete;
 }
 
-export const Progress = ({ setIsLoading }) => {
+export const Progress = ({ isLoading, setIsLoading }) => {
   const [progress, setProgress] = useState(0);
+  const pregresBox = useRef(null);
 
   useEffect(() => {
     const progressCounter = async () => {
@@ -88,7 +90,20 @@ export const Progress = ({ setIsLoading }) => {
 
   return (
     <SC.ProgressContainer>
-      <SC.ProgressLine>{progress}%</SC.ProgressLine>
+      <CSSTransition
+        in={isLoading}
+        nodeRef={pregresBox}
+        timeout={1000}
+        classNames={{
+          exit: "pregresBox-exit",
+          exitActive: "pregresBox-active-exit",
+          exitDone: "pregresBox-done-exit",
+        }}
+      >
+        <SC.ProgressWrapper ref={pregresBox}>
+          <SC.ProgressLine>{progress}%</SC.ProgressLine>
+        </SC.ProgressWrapper>
+      </CSSTransition>
     </SC.ProgressContainer>
   );
 };

@@ -13,3 +13,17 @@ export const ProgressLine = styled.p`
   font-weight: 500;
   color: #fff;
 `;
+
+export const ProgressWrapper = styled.div`
+  overflow: visible;
+  &.pregresBox-done-exit {
+    overflow: hidden;
+  }
+  &.pregresBox-active-exit p {
+    transform: translateY(0);
+  }
+  &.pregresBox-done-exit p {
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in;
+  }
+`;

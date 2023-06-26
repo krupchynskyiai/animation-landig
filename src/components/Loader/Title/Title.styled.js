@@ -42,6 +42,20 @@ export const Title = styled.p`
   }
 `;
 
+export const TextWrapper = styled.div`
+  overflow: visible;
+  &.textBox-done-exit {
+    overflow: hidden;
+  }
+  &.textBox-active-exit p {
+    transform: translateY(0);
+  }
+  &.textBox-done-exit p {
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in;
+  }
+`;
+
 //   &::after {
 //     content: "Monetise";
 //     animation: spin 6s linear infinite;

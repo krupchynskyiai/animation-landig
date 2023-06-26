@@ -40,7 +40,7 @@ const Home = () => {
     if (isLoading) {
       mainLayout.current.style.display = "none";
     } else {
-      mainLayout.current.style.display = "block";
+      mainLayout.current.style.display = "none";
     }
   }, [isLoading]);
 
@@ -52,7 +52,7 @@ const Home = () => {
     <>
       <Loader isLoading={isLoading} scale={scale} setIsLoading={setIsLoading} />
       <CSSTransition
-        in={!isLoading}
+        in={false}
         timeout={0}
         nodeRef={mainLayout}
         classNames={{
