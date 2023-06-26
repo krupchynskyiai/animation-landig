@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as SC from "./Title.styled";
-import { Box } from "components/Box";
+// import { Box } from "components/Box";
 import { CSSTransition } from "react-transition-group";
 
 const loaderText = [
@@ -14,7 +14,7 @@ const loaderText = [
 
 export const Title = ({ isLoading }) => {
   const [text, setText] = useState(loaderText[3]);
-  const [startAnimate, setStartAnimate] = useState(false);
+  //   const [startAnimate, setStartAnimate] = useState(false);
   const textBox = useRef(null);
 
   useEffect(() => {
