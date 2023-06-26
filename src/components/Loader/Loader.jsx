@@ -1,23 +1,23 @@
-import React, { useEffect, useState, useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { useRef } from "react";
+// import { CSSTransition } from "react-transition-group";
 import * as SC from "./Loader.styled";
 import { Progress } from "./Progress/Progress";
 import { Title } from "./Title/Title";
 
 const Loader = ({ isLoading, setIsLoading, scale }) => {
-  const [showLoader, setShowLoader] = useState(true);
+  // const [showLoader, setShowLoader] = useState(true);
 
   const loader = useRef(null);
 
-  useEffect(() => {
-    if (isLoading) {
-      setShowLoader(true);
-    } else {
-      setTimeout(() => {
-        setShowLoader(false);
-      }, 2000);
-    }
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     setShowLoader(true);
+  //   } else {
+  //     setTimeout(() => {
+  //       setShowLoader(false);
+  //     }, 2000);
+  //   }
+  // }, [isLoading]);
 
   return (
     <>
